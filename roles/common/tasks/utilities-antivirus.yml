@@ -1,0 +1,31 @@
+---
+# This playbook contains tasks for installing anti-virus/rootkit scanners
+
+- name: Update repository packagelist cache
+  apt:
+    update_cache: yes
+
+- name: Install "chkrootkit" package
+  apt:
+    name: chrootkit
+    state: present
+
+- name: Install "rkhunter" package
+  apt:
+    name: rkhunter
+    state: present
+
+- name: Install "clamav" package
+  apt:
+    name: clamav
+    state: present
+
+- name: Install "clamav-freshclam" package
+  apt:
+    name: clamav-freshclam
+    state: present
+
+- name: Install "clamtk" package
+  apt:
+    name: clamtk
+    state: present

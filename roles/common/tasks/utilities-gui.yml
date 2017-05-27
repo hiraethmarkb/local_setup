@@ -1,0 +1,21 @@
+---
+# This playbook contains tasks for installing cli tools
+
+- name: Update repository packagelist cache
+  apt:
+    update_cache: yes
+
+- name: Install "bleachbit" package
+  apt:
+    name: bleachbit
+    state: present
+
+- name: Install "redshift-gtk" package
+  apt:
+    name: redshift-gtk
+    state: present
+
+- name: Install "revelation" package
+  apt:
+    name: revelation
+    state: present

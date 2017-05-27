@@ -1,0 +1,22 @@
+---
+# This playbook deploys the whole application stack in this site
+- name: Apply common configuration
+  hosts: all
+  become: true
+
+  roles:
+    - common
+
+#- name: Apply configuration specific for workstation
+#  hosts: local
+#  sudo: true
+
+#  roles:
+#    - workstation
+
+#- name: Apply configuration specific for laptop
+#  hosts: local
+#  sudo: true
+
+#  roles:
+#    - laptop

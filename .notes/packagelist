@@ -4,120 +4,164 @@ Bootstrap
 ansible
 git-core
 
-Config
-------
-
 dotfiles
 playbooks
 
-Development
+
+Common Configuration
+--------------------
+
+  System
+  ------
+
+  arc-theme
+   * sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
+   * wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
+   * sudo apt-key add - < Release.key
+   * sudo apt-get update && sudo apt-get install arc-theme
+
+  syncthing
+   * curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+   * echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+   * sudo apt-get update && sudo apt-get install syncthing
+
+  Utilities
+  ---------
+
+  apg
+  bleachbit
+  clam-tk
+  chkrootkit
+  conky
+   * conky-all
+  curl
+
+  htop
+  mc
+  pass
+  pwgen
+  redshift-gtk
+  revelation
+  rkhunter
+  vim
+   * exuberant-ctags
+   * vim-gtk
+
+
+Workstation
 -----------
 
-zeal
+  Development
+  -----------
 
-Games
------
+  zeal
 
-nethack
-pokerth
- * pokerth
- * pokerth-data
- * pokerth-server
+  Games
+  -----
 
-steam - see https://linuxconfig.org/how-to-install-steam-on-ubuntu-16-04-xenial-xerus
-ufoai
-warzone 2100
- * warzone2100
- * warzone2100-data
- * warzone2100-dbg
- * warzone2100-music
+  nethack
+  pokerth
+   * pokerth
+   * pokerth-data
+   * pokerth-server
 
-wesnoth
+  steam - see https://linuxconfig.org/how-to-install-steam-on-ubuntu-16-04-xenial-xerus
+  ufoai
+  warzone 2100
+   * warzone2100
+   * warzone2100-data
+   * warzone2100-dbg
+   * warzone2100-music
 
-Graphics
---------
+  wesnoth
 
-darktable
-gimp
- * gimp
- * gimp-gutenprint
- * gimp-help-common
- * gimp-help-en
+  Graphics
+  --------
 
-Network
--------
+  darktable
+  gimp
+   * gimp
+   * gimp-gutenprint
+   * gimp-help-common
+   * gimp-help-en
 
-chrome
-chromium
-elinks
- * elinks-data
- * elinks-doc
+  Network
+  -------
 
-irssi
-opera
-slack
-vivaldi
-w3m
- * w3m
- * w3m-img
+  chrome
+  chromium
+  elinks
+   * elinks-data
+   * elinks-doc
 
-Multimedia
-----------
+  irssi
+  slack
+   *
 
-kodi
- * kodi
- * kodi-pvr-hts
-moc
- * moc
- * moc-ffmpeg-plugin(?)
-mpc
-mpd
-ncmpcpp
-quod-libet
-tvheadend - see https://www.tvheadend.org/projects/tvheadend/wiki/AptRepository
-vlc
+  w3m
+   * w3m
+   * w3m-img
 
-Productivity
-------------
+  Multimedia
+  ----------
 
-claws-mail
- * claws-mail
- * claws-mail-clamd-plugin
+  kodi
+   * kodi
+   * kodi-pvr-hts
+  moc
+   * moc
+   * moc-ffmpeg-plugin(?)
+  mpc
+  mpd
+  ncmpcpp
+  quod-libet
+  tvheadend - see https://www.tvheadend.org/projects/tvheadend/wiki/AptRepository
+  vlc
 
-gnumeric
-homebank
-vim
- * exuberant-ctags
- * vim-gtk
+  Productivity
+  ------------
 
-System
+  claws-mail
+   * claws-mail
+   * claws-mail-clamd-plugin
+
+  gnumeric
+  homebank
+
+
+Laptop
 ------
 
-arc-theme
- * sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
- * wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
- * sudo apt-key add - < Release.key
- * sudo apt-get update && sudo apt-get install arc-theme
+  Games
+  -----
 
-syncthing
- * curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
- * echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
- * sudo apt-get update && sudo apt-get install syncthing
+  nethack
+  pokerth
+   * pokerth
+   * pokerth-data
+   * pokerth-server
 
-Utilities
----------
+  Network
+  -------
 
-apg
-bleachbit
-clam-tk
-conky
- * conky-all
-curl
+  chrome
+  chromium
+  elinks
+   * elinks-data
+   * elinks-doc
 
-htop
-mc
-pass
-pwgen
-redshift-gtk
-revelation
+  irssi
+  w3m
+   * w3m
+   * w3m-img
 
+  Multimedia
+  ----------
+
+  moc
+   * moc
+   * moc-ffmpeg-plugin(?)
+  mpc
+  mpd
+  ncmpcpp
+  vlc

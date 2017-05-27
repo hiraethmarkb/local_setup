@@ -1,0 +1,15 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: Update repo cache and upgrade packages
+  apt:
+    upgrade: yes
+    update_cache: yes
+
+- include: theme.yml
+- include: utilities-antivirus.yml
+- include: utilities-cli.yml
+- include: utilities-gui.yml
+- include: utilities-passwords.yml
+- include: utilities-syncthing.yml
+- include: utilities-vim.yml
