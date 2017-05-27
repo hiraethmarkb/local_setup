@@ -29,13 +29,36 @@ fi
 
 # Pre-processing...
 echo "Update repo package lists..."
-sudo apt-get update
+sudo apt update
 
 # Install Ansible and Git
-echo "Installing Ansible..."
-sudo apt-get install ansible
+if [ "dpkg -l ansible != """ ]
+then
+    echo "Installing Ansible..."
+    sudo apt install ansible
+fi
 
-echo "Installing Git..."
-sudo apt-get install git git-core git-doc git-cola
+if [ "dpkg -l git != """ ]
+then
+    echo "Installing Git..."
+    sudo apt install git git-core git-doc git-cola
+fi
+
+# Generate SSH key
+if [ ! -f ~/.ssh/id_rsa.pub ]
+then
+    echo "Generating an SSH key..."
+    ssh-keygen -t rsa
+fi
+
+# Generate PGP key
+if [ ! -f ~/.gnupg/pubring.gpg ]
+then
+    echo "Generating a GPG key..."
+    gpg --gen-key
+    wait
+    gpg -k
+fi
+
 # Post-processing...
 

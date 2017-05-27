@@ -1,0 +1,123 @@
+Bootstrap
+---------
+
+ansible
+git-core
+
+Config
+------
+
+dotfiles
+playbooks
+
+Development
+-----------
+
+zeal
+
+Games
+-----
+
+nethack
+pokerth
+ * pokerth
+ * pokerth-data
+ * pokerth-server
+
+steam - see https://linuxconfig.org/how-to-install-steam-on-ubuntu-16-04-xenial-xerus
+ufoai
+warzone 2100
+ * warzone2100
+ * warzone2100-data
+ * warzone2100-dbg
+ * warzone2100-music
+
+wesnoth
+
+Graphics
+--------
+
+darktable
+gimp
+ * gimp
+ * gimp-gutenprint
+ * gimp-help-common
+ * gimp-help-en
+
+Network
+-------
+
+chrome
+chromium
+elinks
+ * elinks-data
+ * elinks-doc
+
+irssi
+opera
+slack
+vivaldi
+w3m
+ * w3m
+ * w3m-img
+
+Multimedia
+----------
+
+kodi
+ * kodi
+ * kodi-pvr-hts
+moc
+ * moc
+ * moc-ffmpeg-plugin(?)
+mpc
+mpd
+ncmpcpp
+quod-libet
+tvheadend - see https://www.tvheadend.org/projects/tvheadend/wiki/AptRepository
+vlc
+
+Productivity
+------------
+
+claws-mail
+ * claws-mail
+ * claws-mail-clamd-plugin
+
+gnumeric
+homebank
+vim
+ * exuberant-ctags
+ * vim-gtk
+
+System
+------
+
+arc-theme
+ * sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
+ * wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
+ * sudo apt-key add - < Release.key
+ * sudo apt-get update && sudo apt-get install arc-theme
+
+syncthing
+ * curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+ * echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+ * sudo apt-get update && sudo apt-get install syncthing
+
+Utilities
+---------
+
+apg
+bleachbit
+clam-tk
+conky
+ * conky-all
+curl
+
+htop
+mc
+pass
+pwgen
+redshift-gtk
+revelation
+
