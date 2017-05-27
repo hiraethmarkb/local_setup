@@ -24,3 +24,8 @@
   apt:
     name: mc
     state: present
+
+- name: Install "powerline" package
+  apt:
+    name: powerline
+    state: present

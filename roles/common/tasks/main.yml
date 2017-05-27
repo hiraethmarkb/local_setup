@@ -5,6 +5,17 @@
   apt:
     upgrade: yes
     update_cache: yes
+  register: apt_result
+  until: apt_result|success
+  retries: 3
+  delay: 1
+  ignore_errors: yes
+
+- name: Retry, if needed, using command apt-get update
+  command: apt-get update
+  command: apt-get upgrade
+  become: true
+  when: apt_result|failed
 
 - include: theme.yml
 - include: utilities-antivirus.yml

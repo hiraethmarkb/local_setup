@@ -31,13 +31,14 @@ fi
 echo "Update repo package lists..."
 sudo apt update
 
-# Install Ansible and Git
+# Install Ansible and Aptitude (needed by Ansible)
 if [ "dpkg -l ansible != """ ]
 then
     echo "Installing Ansible..."
-    sudo apt install ansible
+    sudo apt install ansible aptitude
 fi
 
+# Install Git
 if [ "dpkg -l git != """ ]
 then
     echo "Installing Git..."

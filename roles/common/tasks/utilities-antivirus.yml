@@ -7,7 +7,7 @@
 
 - name: Install "chkrootkit" package
   apt:
-    name: chrootkit
+    name: chkrootkit
     state: present
 
 - name: Install "rkhunter" package
