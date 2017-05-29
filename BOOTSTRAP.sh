@@ -14,6 +14,8 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
+# @TODO Divvy up workload into functions, and add parameters to choose bits to run.
+
 # Help stuff?
 if [ "$1" == "-h" ]
 then
@@ -62,4 +64,5 @@ then
 fi
 
 # Post-processing...
-
+echo "Update Ansible hosts file..."
+sudo su -c 'echo "localhost ansible_connection=local" >> /etc/ansible/hosts'
