@@ -14,7 +14,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-# @TODO Divvy up workload into functions, and add parameters to choose bits to run.
+# @TODO Divvy up workload into functions, and add parameters to choose which bits to run.
 
 # Help stuff?
 if [ "$1" == "-h" ]

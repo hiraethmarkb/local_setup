@@ -1,15 +1,22 @@
 ---
 # This playbook contains tasks for installing the desired theme
 
+- name: Check for syncthing file
+  local_action: stat path=/etc/apt/sources.list.d/syncthing.list
+  register: syncthing_result
+
 - name: Create repository file
   shell: echo "deb {{ syncthing_repo }} syncthing stable" >> /etc/apt/sources.list.d/syncthing.list
+  when: syncthing_result|failed
 
 - name: Add repository key
   apt_key:
     url: "{{ syncthing_release_key }}"
     state: present
+  when: syncthing_result|failed
 
 - name: Update repositories cache and install "foo" package
   apt:
     name: syncthing
     update_cache: yes
+  when: syncthing_result|failed

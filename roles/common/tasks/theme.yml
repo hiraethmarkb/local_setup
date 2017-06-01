@@ -1,22 +1,30 @@
 ---
 # This playbook contains tasks for installing the desired theme/icons
 
+- name: Check for arc-theme repo file
+  local_action: stat path=/etc/apt/sources.list.d/arc-theme.list
+  register: arc_theme_result
+
 - name: Create repository file
   shell: echo 'deb {{ arc_repo }} /' >> /etc/apt/sources.list.d/arc-theme.list
+  when: arc_theme_result|fail
 
 - name: Add repository key
   apt_key:
     url: "{{ arc_repo }}/Release.key"
     state: present
+  when: arc_theme_result|fail
 
 - name: Update repository packagelist cache
   apt:
     update_cache: yes
+  when: arc_theme_result|fail
 
 - name: Install "arc-theme" package
   apt:
     name: arc-theme
     state: present
+  when: arc_theme_result|fail
 
 - name: Install "faenza-icon-theme" package
   apt:
