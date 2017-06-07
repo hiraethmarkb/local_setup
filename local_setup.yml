@@ -11,8 +11,8 @@
 #  hosts: local
 #  sudo: true
 
-#  roles:
-#    - workstation
+  roles:
+    - workstation
 
 #- name: Apply configuration specific for laptop
 #  hosts: local

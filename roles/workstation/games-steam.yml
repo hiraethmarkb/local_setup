@@ -1,0 +1,15 @@
+---
+# This playbook contains tasks for installing Steam
+# Based on https://linuxconfig.org/how-to-install-steam-on-ubuntu-16-04-xenial-xerus
+
+- name: Enable the multiverse repository
+  command: add-apt-repository multiverse
+  #register: multiverse_result
+
+- name: Install Steam client
+  apt:
+    name: steam
+    #update_cache: yes
+  #when: multiverse_result|succeeded
+
+# Add manual steps, in case of the above failing?
