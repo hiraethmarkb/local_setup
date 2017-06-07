@@ -60,6 +60,9 @@ Workstation
   -----
 
   nethack
+  oolite
+   * wget https://github.com/OoliteProject/oolite/releases/download/1.84/oolite-1.84.linux-x86_64.tgz
+
   pokerth
    * pokerth
    * pokerth-data
