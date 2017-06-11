@@ -21,17 +21,19 @@
   become: true
   when: apt_result|failed
 
-- name: Install "bleachbit" package
+- name: Install "powerline" package
   apt:
-    name: bleachbit
+    name: powerline
     state: present
 
-- name: Install "redshift-gtk" package
-  apt:
-    name: redshift-gtk
-    state: present
+- name: Get Powerline Symbols font
+  shell: wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 
-- name: Install "revelation" package
-  apt:
-    name: revelation
-    state: present
+- name: Move fonts file
+  shell: mv PowerlineSymbols.otf /usr/share/fonts/
+
+- name: Reload fonts cache
+  shell: fc-cache -vf
+
+- name: Move fonts config file
+  shell: mv 10-powerline-symbols.conf /etc/fonts/conf.d/

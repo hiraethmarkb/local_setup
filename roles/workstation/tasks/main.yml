@@ -17,4 +17,5 @@
   become: true
   when: apt_result|failed
 
-- include: games-steam.yml
+- include: includes/games/games-steam.yml
+- include: includes/graphics/graphics-gimp.yml

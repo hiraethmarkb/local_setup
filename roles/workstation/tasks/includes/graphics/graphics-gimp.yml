@@ -1,5 +1,5 @@
 ---
-# This playbook contains tasks for installing cli tools
+# This playbook contains tasks for installing Gimp
 
 - name: Update repo cache and upgrade packages
   apt:
@@ -21,17 +21,12 @@
   become: true
   when: apt_result|failed
 
-- name: Install "bleachbit" package
+- name: Install Gimp
   apt:
-    name: bleachbit
-    state: present
+    name: gimp
+    #update_cache: yes
 
-- name: Install "redshift-gtk" package
+- name: Install Gimp Help
   apt:
-    name: redshift-gtk
-    state: present
-
-- name: Install "revelation" package
-  apt:
-    name: revelation
-    state: present
+    name: gimp-help-en
+    #update_cache: yes

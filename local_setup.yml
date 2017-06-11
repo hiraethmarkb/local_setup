@@ -4,8 +4,8 @@
   hosts: all
   become: true
 
-  roles:
-    - common
+#  roles:
+#    - common
 
 #- name: Apply configuration specific for workstation
 #  hosts: local

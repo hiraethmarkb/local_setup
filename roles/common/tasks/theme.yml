@@ -7,24 +7,24 @@
 
 - name: Create repository file
   shell: echo 'deb {{ arc_repo }} /' >> /etc/apt/sources.list.d/arc-theme.list
-  when: arc_theme_result|fail
+  when: arc_theme_result|failed
 
 - name: Add repository key
   apt_key:
     url: "{{ arc_repo }}/Release.key"
     state: present
-  when: arc_theme_result|fail
+  when: arc_theme_result|failed
 
 - name: Update repository packagelist cache
   apt:
     update_cache: yes
-  when: arc_theme_result|fail
+  when: arc_theme_result|failed
 
 - name: Install "arc-theme" package
   apt:
     name: arc-theme
     state: present
-  when: arc_theme_result|fail
+  when: arc_theme_result|failed
 
 - name: Install "faenza-icon-theme" package
   apt:

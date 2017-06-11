@@ -13,6 +13,10 @@
 
 - name: Retry, if needed, using command apt-get update
   command: apt-get update
+  become: true
+  when: apt_result|failed
+
+- name: Retry, if needed, using command apt-get update
   command: apt-get upgrade
   become: true
   when: apt_result|failed
@@ -22,5 +26,6 @@
 - include: utilities-cli.yml
 - include: utilities-gui.yml
 - include: utilities-passwords.yml
+- include: utilities-powerline.yml
 - include: utilities-syncthing.yml
 - include: utilities-vim.yml
