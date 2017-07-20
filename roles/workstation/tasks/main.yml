@@ -17,5 +17,8 @@
   become: true
   when: apt_result|failed
 
-- include: includes/games/games-steam.yml
+#- include: includes/games/games-steam.yml
 - include: includes/graphics/graphics-gimp.yml
+- include: includes/graphics/graphics-darktable.yml
+- include: includes/network/network-browsers.yml
+- include: includes/network/network-chat.yml

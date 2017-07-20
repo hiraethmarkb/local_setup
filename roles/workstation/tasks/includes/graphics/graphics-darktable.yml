@@ -1,5 +1,5 @@
 ---
-# This playbook contains tasks for installing cli tools
+# This playbook contains tasks for installing Darktable
 
 - name: Update repo cache and upgrade packages
   apt:
@@ -21,22 +21,8 @@
   become: true
   when: apt_result|failed
 
-- name: Install "bleachbit" package
+- name: Install Darktable
   apt:
-    name: bleachbit
+    name: darktable
     state: present
-
-- name: Install "redshift-gtk" package
-  apt:
-    name: redshift-gtk
-    state: present
-
-- name: Install "revelation" package
-  apt:
-    name: revelation
-    state: present
-
-- name: Install "seahorse" package
-  apt:
-    name: seahorse
-    state: present
+    #update_cache: yes

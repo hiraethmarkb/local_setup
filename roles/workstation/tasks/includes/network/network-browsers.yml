@@ -1,5 +1,5 @@
 ---
-# This playbook contains tasks for installing Gimp
+# This playbook contains tasks for installing various web browsers
 
 - name: Update repo cache and upgrade packages
   apt:
@@ -21,20 +21,42 @@
   become: true
   when: apt_result|failed
 
-- name: Install Gimp
+# Chromium
+- name: Install Chromium
   apt:
-    name: gimp
+    name: chromium-browser
     state: present
     #update_cache: yes
 
-- name: Install Gimp Help
+# elinks
+- name: Install elinks
   apt:
-    name: gimp-help-en
+    name: elinks
     state: present
     #update_cache: yes
 
-- name: Install Gimp Gutenprint
+- name: Install elinks data files
   apt:
-    name: gimp-gutenprint
+    name: elinks-data
     state: present
     #update_cache: yes
+
+- name: Install elinks documentation
+  apt:
+    name: elinks-doc
+    state: present
+    #update_cache: yes
+
+# w3m
+- name: Install w3m
+  apt:
+    name: w3m
+    state: present
+    #update_cache: yes
+
+- name: Install w3m inline image extension
+  apt:
+    name: w3m-img
+    state: present
+    #update_cache: yes
+

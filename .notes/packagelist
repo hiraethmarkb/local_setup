@@ -44,6 +44,7 @@ Common Configuration
   redshift-gtk
   revelation
   rkhunter
+  seahorse
   vim
    * exuberant-ctags
    * vim-gtk
@@ -92,8 +93,8 @@ Workstation
   Network
   -------
 
-  chrome
   chromium
+  corebird
   elinks
    * elinks-data
    * elinks-doc
@@ -127,7 +128,15 @@ Workstation
 
   claws-mail
    * claws-mail
+   * claws-mail-attach-warner
+   * claws-mail-bogofilter
+   * claws-mail-doc
    * claws-mail-clamd-plugin
+   * claws-mail-fancy-plugin
+   * claws-mail-feeds-reader
+   * claws-mail-fetchinfo-plugin
+   * claws-mail-managesieve
+   * claws-mail-pgpmine
 
   gnumeric
   homebank
