@@ -3,8 +3,8 @@
 
 - name: Update repo cache and upgrade packages
   apt:
-    upgrade: yes
-    update_cache: yes
+    upgrade: "yes"
+    update_cache: "yes"
   register: apt_result
   until: apt_result|success
   retries: 3

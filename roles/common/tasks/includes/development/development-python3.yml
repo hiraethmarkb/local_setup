@@ -1,20 +1,10 @@
 ---
 # This playbook contains tasks for installing dev tools
 
-- name: Update repo cache and upgrade packages
+ - name: Update repo cache
   apt:
-    upgrade: yes
-    update_cache: yes
+    update_cache: "yes"
   register: apt_result
-  until: apt_result|success
-  retries: 3
-  delay: 1
-  ignore_errors: yes
-
-- name: Retry, if needed, using command apt-get update
-  command: apt-get update
-  become: true
-  when: apt_result|failed
 
 - name: Install "python3-pip" package
   apt:

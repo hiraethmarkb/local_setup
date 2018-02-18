@@ -18,5 +18,5 @@
 - name: Update repositories cache and install "foo" package
   apt:
     name: syncthing
-    update_cache: yes
+    update_cache: "yes"
   when: syncthing_result|failed

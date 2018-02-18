@@ -11,5 +11,5 @@
 - name: Update repositories cache and install "zeal" package
   apt:
     name: zeal
-    update_cache: yes
+    update_cache: "yes"
   when: zeal_result|failed
