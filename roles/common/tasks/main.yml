@@ -1,10 +1,21 @@
 ---
 # This playbook contains common plays that will be run on all nodes.
 
+- name: "Working around Ansible lameness..."
+  apt:
+    pkg: "{{ item }}"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - aptitude
+
 - name: Update repo cache and upgrade packages
   apt:
     upgrade: "yes"
     update_cache: "yes"
+  with_items:
+    - aptitude
   register: apt_result
   until: apt_result|success
   retries: 3

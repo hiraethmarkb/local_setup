@@ -1,10 +1,14 @@
 ---
 # This playbook contains tasks for installing vim
 
-- name: Update repo cache and upgrade packages
+- name: "Working around Ansible lameness..."
   apt:
-    update_cache: "yes"
-  register: apt_result
+    pkg: "{{ item }}"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - aptitude
 
 - name: Install "exuberant-ctags" package
   apt:
