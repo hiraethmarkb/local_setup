@@ -24,3 +24,13 @@
   apt:
     name: mc
     state: present
+
+- name: Install "topydo" package
+  pip:
+    name: topydo
+    executable: pip3
+
+- name: Install columns dependecies for "topydo" package
+  pip:
+    name: topydo[columns]
+    executable: pip3
