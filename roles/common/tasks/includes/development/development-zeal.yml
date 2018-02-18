@@ -1,0 +1,15 @@
+---
+# This playbook contains tasks for installing the desired theme
+
+- name: Check for arc-theme repo file
+  local_action: stat path=/etc/apt/sources.list.d/zeal-developers-ubuntu-ppa-xenial.list
+  register: zeal_result
+
+- name: Add Zeal repository (PPA)
+  apt_repository: repo='{{ zeal_repo }}' state=present
+
+- name: Update repositories cache and install "zeal" package
+  apt:
+    name: zeal
+    update_cache: yes
+  when: zeal_result|failed

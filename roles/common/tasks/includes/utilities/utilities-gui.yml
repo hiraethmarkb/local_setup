@@ -16,11 +16,6 @@
   become: true
   when: apt_result|failed
 
-- name: Retry, if needed, using command apt-get update
-  command: apt-get upgrade
-  become: true
-  when: apt_result|failed
-
 - name: Install "bleachbit" package
   apt:
     name: bleachbit
@@ -31,10 +26,11 @@
     name: redshift-gtk
     state: present
 
-- name: Install "revelation" package
-  apt:
-    name: revelation
-    state: present
+# To be swapped for KeePassXC - needs Snap support
+#- name: Install "revelation" package
+#  apt:
+#    name: revelation
+#    state: present
 
 - name: Install "seahorse" package
   apt:

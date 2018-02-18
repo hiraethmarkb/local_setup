@@ -22,10 +22,10 @@
   when: apt_result|failed
 
 - include: theme.yml
-- include: utilities-antivirus.yml
-- include: utilities-cli.yml
-- include: utilities-gui.yml
-- include: utilities-passwords.yml
-- include: utilities-powerline.yml
-- include: utilities-syncthing.yml
-- include: utilities-vim.yml
+- include: includes/utilities/utilities-antivirus.yml
+- include: includes/utilities/utilities-cli.yml
+- include: includes/utilities/utilities-gui.yml
+- include: includes/utilities/utilities-passwords.yml
+- include: includes/utilities/utilities-powerline.yml
+- include: includes/utilities/utilities-syncthing.yml
+- include: includes/utilities/utilities-vim.yml

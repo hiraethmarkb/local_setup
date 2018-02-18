@@ -5,3 +5,5 @@ arc_repo: http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.0
 
 syncthing_repo: https://apt.syncthing.net/
 syncthing_release_key: https://syncthing.net/release-key.txt
+
+zeal_repo: ppa:zeal-developers/ppa
