@@ -22,6 +22,8 @@ then
     echo "Version: 0.1 (c)
     Usage: `basename $0` [-h] -- Bootstraps local environment by installing Ansible and Git, and then calling the first in a chain of playbooks.
     
+Ubuntu Edition.
+
 These playbooks are used to install common, and useful, software and config on first use of a new system.
     
 Where:
