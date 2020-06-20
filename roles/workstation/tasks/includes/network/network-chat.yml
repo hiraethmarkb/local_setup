@@ -1,7 +1,14 @@
 ---
 # This playbook contains tasks for installing various chat tools
+
 - name: Install the irssi IRC client
   apt:
     name: irssi
     state: present
+    
+- name: Install the "Zoom" client
+  flatpak:
+    name: us.zoom.Zoom
+    state: present
+    remote: flathub
 
