@@ -1,12 +1,13 @@
 ---
 # This playbook contains common plays that will be run on all nodes.
 
-#git add include: theme.yml
+# Plays to include for system tools
+- include: includes/system/system-flatpak.yml
+
 # Plays to include for development tools
 - include: includes/development/development-python3.yml
 - include: includes/development/development-zeal.yml
-# Plays to include for system tools
-- include: includes/system/system-flatpak.yml
+
 # Plays to include for utilities
 - include: includes/utilities/utilities-antivirus.yml
 - include: includes/utilities/utilities-cli.yml
