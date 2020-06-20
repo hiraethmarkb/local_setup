@@ -1,24 +1,16 @@
 ---
 # This playbook contains workstation plays that will be run on all nodes
 
-- name: Update repo cache and upgrade packages
-  apt:
-    upgrade: yes
-    update_cache: yes
-  register: apt_result
-  until: apt_result|success
-  retries: 3
-  delay: 1
-  ignore_errors: yes
+# Plays to include for applications
+- include: includes/applications/applications-audio.yml
 
-- name: Retry, if needed, using command apt-get update
-  command: apt-get update
-  command: apt-get upgrade
-  become: true
-  when: apt_result|failed
+# Plays to include for games
+- include: includes/games/games-steam.yml
 
-#- include: includes/games/games-steam.yml
+# Plays to include for development tools
 - include: includes/graphics/graphics-gimp.yml
-- include: includes/graphics/graphics-darktable.yml
+#- include: includes/graphics/graphics-darktable.yml
+
+# Plays to include for networking tools
 - include: includes/network/network-browsers.yml
 - include: includes/network/network-chat.yml

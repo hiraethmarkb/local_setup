@@ -1,0 +1,32 @@
+---
+# This playbook contains tasks for installing audio tools
+
+#- name: "Working around Ansible lameness..."
+#  apt:
+#    pkg: "{{ item }}"
+#    state: latest
+#    update_cache: yes
+#    cache_valid_time: 3600
+#  with_items:
+#    - aptitude
+
+# Install Audacity flatpak
+- name: Install "Audacity" (Flathub)
+  flatpak:
+    name: org.audacityteam.Audacity
+    state: present
+    remote: flathub
+
+# Install Ex Falso flatpak
+- name: Install "Ex Falso" (Flathub)
+  flatpak:
+    name: io.github.quodlibet.QuodLibet
+    state: present
+    remote: flathub
+    
+# Install Quod Libet flatpak
+- name: Install "io.github.quodlibet.ExFalso" package
+  flatpak:
+    name: io.github.quodlibet.ExFalso
+    state: present
+    remote: flathub
