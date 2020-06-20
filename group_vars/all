@@ -1,8 +1,6 @@
 ---
 # Variables listed here are applicable to all host groups
 
-arc_repo: http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/
-
 syncthing_repo: https://apt.syncthing.net/
 syncthing_release_key: https://syncthing.net/release-key.txt
 
