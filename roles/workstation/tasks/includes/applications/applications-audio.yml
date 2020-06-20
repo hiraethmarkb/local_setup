@@ -17,15 +17,15 @@
     state: present
     remote: flathub
 
-# Install Ex Falso flatpak
+# Install "Quod Libet" flatpak
 - name: Install "Ex Falso" (Flathub)
   flatpak:
     name: io.github.quodlibet.QuodLibet
     state: present
     remote: flathub
     
-# Install Quod Libet flatpak
-- name: Install "io.github.quodlibet.ExFalso" package
+# Install "Ex Falso" flatpak
+- name: Install "Ex Falso" package
   flatpak:
     name: io.github.quodlibet.ExFalso
     state: present

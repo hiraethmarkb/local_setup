@@ -1,15 +1,6 @@
 ---
 # This playbook contains tasks for installing cli tools
 
-- name: "Working around Ansible lameness..."
-  apt:
-    pkg: "{{ item }}"
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600
-  with_items:
-    - aptitude
-
 - name: Install "conky-all" package
   apt:
     name: conky-all
@@ -35,7 +26,7 @@
     name: topydo
     executable: pip3
 
-- name: Install columns dependecies for "topydo" package
+- name: Install columns dependencies for "topydo" package
   pip:
     name: topydo[columns]
     executable: pip3

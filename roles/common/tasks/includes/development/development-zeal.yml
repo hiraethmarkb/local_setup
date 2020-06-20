@@ -6,4 +6,3 @@
   flatpak:
     name: org.zealdocs.Zeal
     state: present
-    remote: flathub
