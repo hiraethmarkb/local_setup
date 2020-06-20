@@ -1,31 +1,21 @@
 ---
 # This playbook contains tasks for installing the desired theme
 
-- name: "Working around Ansible lameness..."
-  apt:
-    pkg: "{{ item }}"
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600
-  with_items:
-    - aptitude
-
 - name: Check for syncthing file
   local_action: stat path=/etc/apt/sources.list.d/syncthing.list
   register: syncthing_result
 
-- name: Create repository file
+- name: Create "syncthing" repository file
   shell: echo "deb {{ syncthing_repo }} syncthing stable" >> /etc/apt/sources.list.d/syncthing.list
-  when: syncthing_result|failed
+  when: syncthing_result is failed
 
-- name: Add repository key
+- name: Add "syncthing" repository key
   apt_key:
     url: "{{ syncthing_release_key }}"
     state: present
-  when: syncthing_result|failed
+  when: syncthing_result is failed
 
-- name: Update repositories cache and install "foo" package
+- name: Update repositories cache and install "syncthing" package
   apt:
     name: syncthing
     update_cache: "yes"
-  when: syncthing_result|failed

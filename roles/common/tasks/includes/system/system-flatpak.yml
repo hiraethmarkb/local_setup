@@ -1,0 +1,23 @@
+---
+# This playbook contains tasks for installing system tools
+
+#- name: "Working around Ansible lameness..."
+#  apt:
+#    pkg: "{{ item }}"
+#    state: latest
+#    update_cache: yes
+#    cache_valid_time: 3600
+#  with_items:
+#    - aptitude
+
+# Install base flatpak package
+- name: Install "flatpak" package
+  apt:
+    name: flatpak
+    state: present
+    
+# Install GNOME Software integration
+- name: Install "gnome-software-plugin-flatpak" package
+  apt:
+    name: gnome-software-plugin-flatpak
+    state: present

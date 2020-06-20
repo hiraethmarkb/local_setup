@@ -1,40 +1,13 @@
 ---
 # This playbook contains common plays that will be run on all nodes.
 
-- name: "Working around Ansible lameness..."
-  apt:
-    pkg: "{{ item }}"
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600
-  with_items:
-    - aptitude
-
-- name: Update repo cache and upgrade packages
-  apt:
-    upgrade: "yes"
-    update_cache: "yes"
-  with_items:
-    - aptitude
-  register: apt_result
-  until: apt_result|success
-  retries: 3
-  delay: 1
-  ignore_errors: yes
-
-- name: Retry, if needed, using command apt-get update
-  command: apt-get update
-  become: true
-  when: apt_result|failed
-
-- name: Retry, if needed, using command apt-get update
-  command: apt-get upgrade
-  become: true
-  when: apt_result|failed
-
-- include: theme.yml
+#git add include: theme.yml
+# Plays to include for development tools
 - include: includes/development/development-python3.yml
 - include: includes/development/development-zeal.yml
+# Plays to include for system tools
+- include: includes/system/system-flatpak.yml
+# Plays to include for utilities
 - include: includes/utilities/utilities-antivirus.yml
 - include: includes/utilities/utilities-cli.yml
 - include: includes/utilities/utilities-gui.yml
