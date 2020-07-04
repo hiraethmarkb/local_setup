@@ -3,6 +3,7 @@
 
 # Plays to include for system tools
 - include: includes/system/system-flatpak.yml
+- include: includes/system/system-ecryptfs.yml
 
 # Plays to include for development tools
 - include: includes/development/development-python3.yml
