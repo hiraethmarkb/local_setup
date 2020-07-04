@@ -12,6 +12,7 @@
 # Plays to include for utilities
 - include: includes/utilities/utilities-antivirus.yml
 - include: includes/utilities/utilities-cli.yml
+- include: includes/utilities/utilities-cli-fun.yml
 - include: includes/utilities/utilities-gui.yml
 - include: includes/utilities/utilities-passwords.yml
 - include: includes/utilities/utilities-powerline.yml

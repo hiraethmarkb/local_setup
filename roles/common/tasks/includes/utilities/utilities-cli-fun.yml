@@ -1,0 +1,27 @@
+---
+# This playbook contains tasks for installing fun cli tools
+
+- name: Install "cowsay" package
+  apt:
+    name: cowsay
+    state: present
+
+- name: Install "fortune-mod" package
+  apt:
+    name: fortune-mod
+    state: present
+
+- name: Install "fortunes" package (Data for "fortune-mod")
+  apt:
+    name: fortunes
+    state: present
+
+- name: Install "fortunes-bofh-excuses" package (Data for "fortune-mod")
+  apt:
+    name: fortunes-bofh-excuses
+    state: present
+
+- name: Install "fortunes-spam" package (Data for "fortune-mod")
+  apt:
+    name: fortunes-spam
+    state: present

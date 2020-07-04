@@ -21,6 +21,16 @@
     name: mc
     state: present
 
+- name: Install "tmux" package
+  apt:
+    name: tmux
+    state: present
+
+- name: Install "tmuxinator" package
+  apt:
+    name: tmuxinator
+    state: present
+
 - name: Install "topydo" package
   pip:
     name: topydo
