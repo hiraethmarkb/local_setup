@@ -1,0 +1,19 @@
+---
+# This playbook contains workstation plays that will be run on all nodes
+#
+# include: includes/network/network-download-tools.yml
+
+- name: Install "aria2" package
+  apt:
+    name: aria2
+    state: present
+
+- name: Install "rtorrent" package
+  apt:
+    name: rtorrent
+    state: present
+
+- name: Install "uget" package
+  apt:
+    name: uget
+    state: present
