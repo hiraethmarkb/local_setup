@@ -1,0 +1,17 @@
+---
+# This playbook contains tasks for installing cli tools
+
+- name: Install "gnumeric" package
+  apt:
+    name: gnumeric
+    state: present
+
+- name: Install "gnumeric-plugins-extra" package
+  apt:
+    name: gnumeric-plugins-extra
+    state: present
+
+- name: Install "homebank" package
+  apt:
+    name: homebank
+    state: present
