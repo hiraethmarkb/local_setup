@@ -3,6 +3,7 @@
 
 # Plays to include for applications
 - include: includes/applications/applications-audio.yml
+- include: includes/applications/applications-office.yml
 
 # Plays to include for games
 - include: includes/games/games-steam.yml
@@ -14,3 +15,4 @@
 # Plays to include for networking tools
 - include: includes/network/network-browsers.yml
 - include: includes/network/network-chat.yml
+- include: includes/network/network-download-tools.yml
