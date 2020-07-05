@@ -6,17 +6,6 @@
     name: bleachbit
     state: present
 
-- name: Install "redshift-gtk" package
-  apt:
-    name: redshift-gtk
-    state: present
-
-# To be swapped for KeePassXC - needs Snap support
-#- name: Install "revelation" package
-#  apt:
-#    name: revelation
-#    state: present
-
 - name: Install "seahorse" package
   apt:
     name: seahorse
