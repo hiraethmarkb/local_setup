@@ -1,0 +1,8 @@
+---
+# This playbook contains tasks for installing system tools
+
+# Install GVFS - userspace virtual filesystem
+- name: Install "gvfs-fuse" package
+  apt:
+    name: gvfs-fuse
+    state: present

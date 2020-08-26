@@ -1,0 +1,12 @@
+---
+# This playbook contains tasks for installing audio tools
+
+- name: Install "abcde" package
+  apt:
+    name: abcde
+    state: present
+
+- name: Install "flac" package
+  apt:
+    name: flac
+    state: present
