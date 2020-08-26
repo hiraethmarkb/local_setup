@@ -6,3 +6,9 @@
   apt:
     name: gvfs-fuse
     state: present
+
+# Install MTP Tools
+- name: INstall "mtp-tools" package
+  apt:
+    name: mtp-tools
+    state: present
