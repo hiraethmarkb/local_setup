@@ -1,6 +1,11 @@
 ---
 # This playbook contains tasks for installing cli tools
 
+- name: Install "bpytop" package
+  pip:
+    name: bpytop
+    executable: pip3
+
 - name: Install "conky-all" package
   apt:
     name: conky-all

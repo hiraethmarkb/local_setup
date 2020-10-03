@@ -47,3 +47,8 @@
     state: present
     #update_cache: yes
 
+# liferea
+- name: Install "liferea" - RSS Feed Reader
+  apt:
+    name: liferea
+    state: present
